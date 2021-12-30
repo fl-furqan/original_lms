@@ -118,7 +118,7 @@
 
         </p>
         <p style="display: flex; flex-direction: row-reverse">
-            &nbsp; {{ \Carbon\Carbon::create()->year($year)->month($month)->format('F') . ' ' . date('Y') }}
+            &nbsp; {{ \Carbon\Carbon::create()->year($year)->month($month)->format('F') . ' ' . $year }}
             <span style="color:#C65911;">الشهر / Month:</span>
         </p>
 

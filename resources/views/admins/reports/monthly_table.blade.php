@@ -118,7 +118,7 @@
 
         </p>
         <p style="display: flex; flex-direction: row-reverse">
-            &nbsp; {{ \Carbon\Carbon::create()->year(2021)->month($month)->format('F') . ' ' . date('Y') }}
+            &nbsp; {{ \Carbon\Carbon::create()->year($year)->month($month)->format('F') . ' ' . date('Y') }}
             <span style="color:#C65911;">الشهر / Month:</span>
         </p>
 
@@ -230,7 +230,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @for($day=1; $day < \Carbon\Carbon::create()->year(2021)->month($month)->daysInMonth + 1; ++$day)
+                        @for($day=1; $day < \Carbon\Carbon::create()->year($year)->month($month)->daysInMonth + 1; ++$day)
                             <tr style="min-height: 45px;height: 45px;max-height: 45px;" class="{{ str_contains(\Carbon\Carbon::createFromDate($now->year, $now->month, $day)->format('l') ,'Friday') ? 'custom-border' : '' }}">
                                 <td style="min-height: 45px;height: 45px;max-height: 45px; text-align:center;font-size:10px;">
                                     <input type="hidden" name="date" {{ disableRecord($now, $day) }} value="{{ \Carbon\Carbon::createFromDate($now->year, $now->month, $day)->format('l d-m-Y') }}">

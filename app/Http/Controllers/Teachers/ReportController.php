@@ -699,7 +699,7 @@ class ReportController extends Controller
         $class_number = User::query()->where('id', '=', request()->student_id)->first()->class_number;
         $students = User::query()->where('class_number', '=', $class_number)->orderBy('student_number', 'ASC')->get();
 
-        return view('teachers.reports.monthly_table', ['now' => $now, 'month' => $month, 'reports' => $reports, 'notes' => $notes, 'students' => $students, 'new_lessons' => $new_lessons, 'daily_revision' => $daily_revision]);
+        return view('teachers.reports.monthly_table', ['now' => $now, 'month' => $month, 'reports' => $reports, 'notes' => $notes, 'students' => $students, 'new_lessons' => $new_lessons, 'daily_revision' => $daily_revision, 'year' => $year]);
     }
 
     public function reportTableStore(Request $request)
